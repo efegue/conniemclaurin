@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connie McLaurin - Software Engineer</title>
+    <meta name="description" content="Connie McLaurin - Full Stack Software Engineer with expertise in ColdFusion, JavaScript, and modern web technologies">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Connie McLaurin, Software Engineer, Full Stack Developer, ColdFusion, JavaScript, HTML, CSS, doTERRA, Auburn Alabama">
+    <meta name="author" content="Connie McLaurin">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Connie McLaurin - Software Engineer">
+    <meta property="og:description" content="Full Stack Software Engineer with expertise in ColdFusion, JavaScript, and modern web technologies">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://conniemclaurin.com">
+    <meta property="og:image" content="https://conniemclaurin.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Connie McLaurin - Software Engineer">
+    <meta name="twitter:description" content="Full Stack Software Engineer with expertise in ColdFusion, JavaScript, and modern web technologies">
+    <meta name="twitter:image" content="https://conniemclaurin.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1F2937',
+                        accent: '#10B981'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Include Header -->
+    <div id="header-container"></div>
+
+    <!-- Include Hero Section -->
+    <div id="hero-container"></div>
+
+    <!-- Include About Section -->
+    <div id="about-container"></div>
+
+    <!-- Include Experience Section -->
+    <div id="experience-container"></div>
+
+    <!-- Include Skills Section -->
+    <div id="skills-container"></div>
+
+    <!-- Include Contact Section -->
+    <div id="contact-container"></div>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Load JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Load Components -->
+    <script>
+        // Function to load HTML components
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component ${componentPath}:`, error);
+            }
+        }
+
+        // Load all components when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadComponent('header-container', 'components/header.html'),
+                loadComponent('hero-container', 'components/hero.html'),
+                loadComponent('about-container', 'components/about.html'),
+                loadComponent('experience-container', 'components/experience.html'),
+                loadComponent('skills-container', 'components/skills.html'),
+                loadComponent('contact-container', 'components/contact.html'),
+                loadComponent('footer-container', 'components/footer.html')
+            ]);
+        });
+    </script>
+</body>
+</html> 
